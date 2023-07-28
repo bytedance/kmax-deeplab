@@ -193,7 +193,6 @@ class kMaXTransformerLayer(nn.Module):
         # k-means assignment.
         prediction_result = self._predcitor(
             mask_embeddings=query_space, class_embeddings=query_space, pixel_feature=pixel_space)
-        clustering_result = prediction_result['mask_logits'].flatten(2).detach() # N L HW
         
         with torch.no_grad():
             clustering_result = prediction_result['mask_logits'].flatten(2).detach() # N L HW
